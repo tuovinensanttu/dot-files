@@ -5,7 +5,8 @@ local keymap = vim.keymap -- for conciseness
 -- general keymaps
 
 keymap.set("i", "jk", "<ESC>")
-
+keymap.set({ "n", "v" }, "$", "^") -- changes $ to go start of the line
+keymap.set({ "n", "v" }, "^", "$") -- changes ^ to go end of the line
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 keymap.set("n", "x", '"_x')
@@ -46,4 +47,3 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
