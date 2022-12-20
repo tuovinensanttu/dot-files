@@ -4,6 +4,14 @@ local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
 
+-- remap movement
+keymap.set({ "n", "v", "o" }, "n", "<Left>") -- n -> go left
+keymap.set({ "n", "v", "o" }, "l", "<Up>") -- l -> go up
+keymap.set({ "n", "v", "o" }, "h", "<Down>") -- h -> go down
+keymap.set({ "n", "v", "o" }, "e", "<Right>") -- e -> go right
+keymap.set({ "n", "v" }, "j", "e") -- j -> go end of next word
+keymap.set({ "n", "v" }, "<S-j>", "<S-e>") -- j -> go end of next word
+
 keymap.set("i", "jk", "<ESC>")
 keymap.set({ "n", "v" }, "$", "^") -- changes $ to go start of the line
 keymap.set({ "n", "v" }, "^", "$") -- changes ^ to go end of the line
